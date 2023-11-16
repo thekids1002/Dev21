@@ -13,74 +13,10 @@ namespace DXApplication2
 {
     public partial class Form1 : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        Function _function = new Function();
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accordionControlElement1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void accordionControlElement2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void xtraTabPage1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnTinh_Click(object sender, EventArgs e)
@@ -91,23 +27,57 @@ namespace DXApplication2
                 string RS = Rs.Text.ToString();
                 string GB = gB.Text.ToString();
 
+                string mMaxDais = mMaxDai.Text.ToString();
+                string bDais = bDai.Text.ToString();
+                string hDais = hDai.Text.ToString();
+                string aDais = aDai.Text.ToString();
+                string phiDais = phiDai.Text.ToString();
+
+                string mMaxNgans = mMaxNgan.Text.ToString();
+                string bNgans = bNgan.Text.ToString();
+                string hNgans = hNgan.Text.ToString();
+                string aNgans = aNgan.Text.ToString();
+                string phiNgans = phiNgan.Text.ToString();
+
+
+
                 if (string.IsNullOrEmpty(RB) || string.IsNullOrEmpty(RS) || string.IsNullOrEmpty(GB))
                 {
                     MessageBox.Show("ko đc trống", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
-                else
+                else if (!Function.isNumber(RB) || !Function.isNumber(RS) || !Function.isNumber(GB) ||
+                         !Function.isNumber(mMaxDais) || !Function.isNumber(bDais) || !Function.isNumber(hDais) ||
+                         !Function.isNumber(aDais) || !Function.isNumber(phiDais) || !Function.isNumber(mMaxNgans)
+                         || !Function.isNumber(mMaxNgans) || !Function.isNumber(bNgans) || !Function.isNumber(hNgans)
+                         || !Function.isNumber(aNgans) || !Function.isNumber(phiNgans))
                 {
-                    MessageBox.Show("Nhap đc r", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    //tính slot Dài
+                    double tinhAMd = Function.Calculateam(parseNum(mMaxDais), parseNum(GB), parseNum(RB), parseNum(bDais), parseNum(hDais));
+                    double tinhXd = Function.CalculateX(tinhAMd);
+                    double tinhASd = Function.CalculateAs(tinhXd, parseNum(GB), parseNum(RB), parseNum(bDais), parseNum(hDais), parseNum(RS));
+                    double tinhNd = Function.CalculateN(tinhASd, parseNum(phiDais));
+                    double tinhAd = Function.CalculateA(parseNum(bDais), tinhNd);
+
+                    //tinh Shot Ngắn
+                    double tinhAMn = Function.Calculateam(parseNum(mMaxNgans), parseNum(GB), parseNum(RB), parseNum(bNgans), parseNum(hNgans));
+                    double tinhXn = Function.CalculateX(tinhAMn);
+                    double tinhASn = Function.CalculateAs(tinhXn, parseNum(GB), parseNum(RB), parseNum(bNgans), parseNum(hNgans), parseNum(RS));
+                    double tinhNn = Function.CalculateN(tinhASn, parseNum(phiNgans));
+                    double tinhAn = Function.CalculateA(parseNum(bNgans), tinhNn);
 
                 }
             }
             catch (Exception)
             {
 
-                throw;
             }
         }
 
-        
+        private double parseNum(string d)
+        {
+            return double.Parse(d);
+        }
+
     }
 }

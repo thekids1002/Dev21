@@ -111,7 +111,6 @@
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1721, 726);
             this.fluentDesignFormContainer1.TabIndex = 0;
-            this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
             // xtraTabControl1
             // 
@@ -131,7 +130,6 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1713, 686);
             this.xtraTabPage1.Text = "xtraTabPage1";
-            this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
             // table
             // 
@@ -261,7 +259,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1599, 249);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnTinh
             // 
@@ -352,7 +349,6 @@
             this.label6.Size = new System.Drawing.Size(22, 16);
             this.label6.TabIndex = 19;
             this.label6.Text = "Rb";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -389,7 +385,6 @@
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 15;
             this.label2.Text = "b (mm)";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -399,7 +394,6 @@
             this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 14;
             this.label1.Text = "M max (kN.m)";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // gB
             // 
@@ -506,7 +500,6 @@
             this.mMaxDai.Name = "mMaxDai";
             this.mMaxDai.Size = new System.Drawing.Size(127, 22);
             this.mMaxDai.TabIndex = 2;
-            this.mMaxDai.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // simpleButton2
             // 
@@ -523,7 +516,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(135, 46);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Phương cạnh dài";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // xtraTabPage2
             // 
@@ -558,7 +550,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DX Application";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
