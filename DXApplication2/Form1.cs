@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DXApplication2
 {
@@ -71,5 +72,42 @@ namespace DXApplication2
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTinh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string RB = rB.Text.ToString();
+                string RS = Rs.Text.ToString();
+                string GB = gB.Text.ToString();
+
+                if (string.IsNullOrEmpty(RB) || string.IsNullOrEmpty(RS) || string.IsNullOrEmpty(GB))
+                {
+                    MessageBox.Show("ko đc trống", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Nhap đc r", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        
     }
 }
